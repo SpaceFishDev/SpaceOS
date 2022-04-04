@@ -40,6 +40,9 @@ backspace:
 		sub [bp], byte 1
 		mov dl, [bp]
 		mov dh, [bp + 1]
+		mov bx, [bp]
+		add bx, byte 1
+		mov [cmd + bx], byte 0
 		int 10h
 		mov al, ' '
 		call putc
